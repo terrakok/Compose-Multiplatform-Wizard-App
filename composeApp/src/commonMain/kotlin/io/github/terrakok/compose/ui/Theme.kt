@@ -37,16 +37,16 @@ private val DarkColors = darkColors(
     onSurface = md_theme_dark_onSurface,
 )
 
-val CurrentThemeIsDark = compositionLocalOf { mutableStateOf(true) }
+val LocalThemeIsDark = compositionLocalOf { mutableStateOf(true) }
 
 @Composable
 fun AppTheme(
     content: @Composable() () -> Unit
 ) {
     CompositionLocalProvider(
-        CurrentThemeIsDark provides mutableStateOf(isSystemInDarkTheme())
+        LocalThemeIsDark provides mutableStateOf(isSystemInDarkTheme())
     ) {
-        val isDark by CurrentThemeIsDark.current
+        val isDark by LocalThemeIsDark.current
         val colors = if (!isDark) LightColors else DarkColors
         MaterialTheme(
             colors = colors,

@@ -23,14 +23,17 @@ fun TopMenu(modifier: Modifier = Modifier) {
         modifier = modifier.fillMaxWidth().padding(10.dp),
         horizontalArrangement = Arrangement.End
     ) {
+        var isShowVersions by LocalShowVersions.current
         Image(
             modifier = Modifier
                 .padding(4.dp)
                 .size(40.dp)
                 .clip(CircleShape)
-                .clickable { }
+                .clickable { isShowVersions = !isShowVersions }
                 .padding(8.dp),
-            painter = painterResource("code_off.xml"),
+            painter = painterResource(
+                if (isShowVersions) "code.xml" else "code_off.xml"
+            ),
             colorFilter = ColorFilter.tint(getContentColor()),
             contentDescription = null
         )
@@ -56,7 +59,7 @@ fun TopMenu(modifier: Modifier = Modifier) {
             colorFilter = ColorFilter.tint(getContentColor()),
             contentDescription = null
         )
-        var isDark by CurrentThemeIsDark.current
+        var isDark by LocalThemeIsDark.current
         Image(
             modifier = Modifier
                 .padding(4.dp)
