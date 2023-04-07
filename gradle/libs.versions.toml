@@ -1,0 +1,24 @@
+[versions]
+
+kotlin = "1.8.20"
+agp = "7.4.2"
+compose = "1.4.0-rc03"
+androidx-appcompat = "1.6.1"
+androidx-activityCompose = "1.7.0"
+compose-uitooling = "1.4.0"
+libres = "1.1.7"
+
+[libraries]
+
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+androidx-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+compose-uitooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-uitooling" }
+libres = { module = "io.github.skeptick.libres:libres-compose", version.ref = "libres" }
+
+[plugins]
+
+multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+libres = { id = "io.github.skeptick.libres", version.ref = "libres" }
