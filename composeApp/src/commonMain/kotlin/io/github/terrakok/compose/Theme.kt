@@ -6,6 +6,10 @@ import androidx.compose.material.Surface
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 
 private val LightColors = lightColors(
     primary = md_theme_light_primary,
@@ -33,21 +37,22 @@ private val DarkColors = darkColors(
     onSurface = md_theme_dark_onSurface,
 )
 
+val CurrentThemeIsDark = compositionLocalOf { mutableStateOf(true) }
+
 @Composable
-internal fun AppTheme(
-    useDarkTheme: Boolean = isSystemInDarkTheme(),
+fun AppTheme(
     content: @Composable() () -> Unit
 ) {
-    val colors = if (!useDarkTheme) {
-        LightColors
-    } else {
-        DarkColors
+    CompositionLocalProvider(
+        CurrentThemeIsDark provides mutableStateOf(isSystemInDarkTheme())
+    ) {
+        val isDark by CurrentThemeIsDark.current
+        val colors = if (!isDark) LightColors else DarkColors
+        MaterialTheme(
+            colors = colors,
+            content = {
+                Surface(content = content)
+            }
+        )
     }
-
-    MaterialTheme(
-        colors = colors,
-        content = {
-            Surface(content = content)
-        }
-    )
 }

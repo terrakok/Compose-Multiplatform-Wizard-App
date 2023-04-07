@@ -7,7 +7,7 @@ import io.github.terrakok.compose.App
 fun main() = application {
     Window(
         title = "Compose Multiplatform Wizard",
-        state = rememberWindowState(width = 800.dp, height = 600.dp),
+        state = rememberWindowState(width = 1000.dp, height = 800.dp),
         onCloseRequest = ::exitApplication,
     ) { App() }
 }
