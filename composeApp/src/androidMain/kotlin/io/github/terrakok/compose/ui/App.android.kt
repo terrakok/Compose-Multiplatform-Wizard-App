@@ -1,4 +1,4 @@
-package io.github.terrakok.compose
+package io.github.terrakok.compose.ui
 
 import android.app.Application
 import android.content.Intent

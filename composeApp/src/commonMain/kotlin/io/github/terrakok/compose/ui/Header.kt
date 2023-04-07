@@ -1,4 +1,4 @@
-package io.github.terrakok.compose
+package io.github.terrakok.compose.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import io.github.skeptick.libres.compose.painterResource
+import io.github.terrakok.compose.Res
 
 @Composable
 fun Header(modifier: Modifier = Modifier) {

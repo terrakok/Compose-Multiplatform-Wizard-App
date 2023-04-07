@@ -1,4 +1,4 @@
-import io.github.terrakok.compose.App
+import io.github.terrakok.compose.ui.App
 import org.jetbrains.skiko.wasm.onWasmReady
 
 fun main() {

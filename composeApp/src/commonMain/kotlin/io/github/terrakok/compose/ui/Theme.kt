@@ -1,4 +1,4 @@
-package io.github.terrakok.compose
+package io.github.terrakok.compose.ui
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

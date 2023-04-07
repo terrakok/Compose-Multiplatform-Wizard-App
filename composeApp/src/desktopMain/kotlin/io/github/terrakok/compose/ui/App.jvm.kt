@@ -1,4 +1,4 @@
-package io.github.terrakok.compose
+package io.github.terrakok.compose.ui
 
 import java.awt.Desktop
 import java.net.URI

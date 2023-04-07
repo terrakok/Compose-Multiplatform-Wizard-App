@@ -1,4 +1,4 @@
-package io.github.terrakok.compose
+package io.github.terrakok.compose.ui
 
 import platform.Foundation.NSURL
 import platform.UIKit.UIApplication

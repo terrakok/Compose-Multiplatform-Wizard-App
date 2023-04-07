@@ -1,4 +1,4 @@
-package io.github.terrakok.compose
+package io.github.terrakok.compose.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.horizontalScroll
@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.unit.dp
 import io.github.skeptick.libres.compose.painterResource
+import io.github.terrakok.compose.Res
 import io.github.terrakok.compose.wizard.ProjectInfo
 
 @Composable
