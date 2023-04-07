@@ -1,6 +1,11 @@
 package io.github.terrakok.compose.wizard.files
 
-import io.github.terrakok.compose.wizard.*
+import io.github.terrakok.compose.wizard.ProjectFile
+import io.github.terrakok.compose.wizard.ProjectInfo
+import io.github.terrakok.compose.wizard.hasAndroid
+import io.github.terrakok.compose.wizard.hasBrowser
+import io.github.terrakok.compose.wizard.hasDesktop
+import io.github.terrakok.compose.wizard.hasIos
 
 class Readme(info: ProjectInfo) : ProjectFile {
     override val path = "README.MD"

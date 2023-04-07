@@ -16,7 +16,6 @@ import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.LocalContentColor
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable

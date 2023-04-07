@@ -1,6 +1,11 @@
 package io.github.terrakok.compose.wizard.files
 
-import io.github.terrakok.compose.wizard.*
+import io.github.terrakok.compose.wizard.ProjectFile
+import io.github.terrakok.compose.wizard.ProjectInfo
+import io.github.terrakok.compose.wizard.catalogAccessor
+import io.github.terrakok.compose.wizard.hasAndroid
+import io.github.terrakok.compose.wizard.hasIos
+import io.github.terrakok.compose.wizard.isPlugin
 
 class RootBuildGradleKts(info: ProjectInfo) : ProjectFile {
     override val path = "build.gradle.kts"

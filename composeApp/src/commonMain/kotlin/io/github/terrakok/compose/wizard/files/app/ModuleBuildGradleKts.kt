@@ -1,6 +1,21 @@
 package io.github.terrakok.compose.wizard.files.app
 
-import io.github.terrakok.compose.wizard.*
+import io.github.terrakok.compose.wizard.ApolloPlugin
+import io.github.terrakok.compose.wizard.BuildConfigPlugin
+import io.github.terrakok.compose.wizard.ComposePlatform
+import io.github.terrakok.compose.wizard.Dependency
+import io.github.terrakok.compose.wizard.LibresPlugin
+import io.github.terrakok.compose.wizard.ProjectFile
+import io.github.terrakok.compose.wizard.ProjectInfo
+import io.github.terrakok.compose.wizard.SQLDelightPlugin
+import io.github.terrakok.compose.wizard.hasAndroid
+import io.github.terrakok.compose.wizard.hasBrowser
+import io.github.terrakok.compose.wizard.hasDesktop
+import io.github.terrakok.compose.wizard.hasIos
+import io.github.terrakok.compose.wizard.isCommon
+import io.github.terrakok.compose.wizard.isPlugin
+import io.github.terrakok.compose.wizard.libraryNotation
+import io.github.terrakok.compose.wizard.pluginNotation
 
 class ModuleBuildGradleKts(info: ProjectInfo) : ProjectFile {
     override val path = "composeApp/build.gradle.kts"
