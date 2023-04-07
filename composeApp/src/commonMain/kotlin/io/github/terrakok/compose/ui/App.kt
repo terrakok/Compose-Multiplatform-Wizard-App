@@ -27,9 +27,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.unit.dp
-import io.github.skeptick.libres.compose.painterResource
-import io.github.terrakok.compose.Res
 import io.github.terrakok.compose.wizard.ProjectInfo
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun App() = AppTheme {
@@ -95,7 +94,7 @@ fun App() = AppTheme {
                     onClick = {}
                 ) {
                     Image(
-                        painter = painterResource(Res.image.arrow_circle_down),
+                        painter = painterResource("arrow_circle_down.xml"),
                         colorFilter = ColorFilter.tint(getContentColor()),
                         contentDescription = null
                     )

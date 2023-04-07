@@ -11,8 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import io.github.skeptick.libres.compose.painterResource
-import io.github.terrakok.compose.Res
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun Header(modifier: Modifier = Modifier) {
@@ -23,7 +22,7 @@ fun Header(modifier: Modifier = Modifier) {
     ) {
         Image(
             modifier = Modifier.size(100.dp),
-            painter = painterResource(Res.image.compose_logo),
+            painter = painterResource("compose_logo.xml"),
             contentDescription = null
         )
         Spacer(Modifier.size(20.dp))

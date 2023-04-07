@@ -21,9 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.unit.dp
-import io.github.skeptick.libres.compose.painterResource
-import io.github.skeptick.libres.images.Image
-import io.github.terrakok.compose.Res
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun ComposeTargetGroup(
@@ -33,10 +31,10 @@ fun ComposeTargetGroup(
     browser: MutableState<Boolean>,
 ) {
     Row {
-        ComposeTargetButton(android, "Android", Res.image.android, true)
-        ComposeTargetButton(ios, "iOS", Res.image.apple, null)
-        ComposeTargetButton(desktop, "Desktop", Res.image.laptop, null)
-        ComposeTargetButton(browser, "Browser", Res.image.language, false)
+        ComposeTargetButton(android, "Android", "android.xml", true)
+        ComposeTargetButton(ios, "iOS", "apple.xml", null)
+        ComposeTargetButton(desktop, "Desktop", "laptop.xml", null)
+        ComposeTargetButton(browser, "Browser", "language.xml", false)
     }
 }
 
@@ -44,7 +42,7 @@ fun ComposeTargetGroup(
 private fun ComposeTargetButton(
     state: MutableState<Boolean>,
     name: String,
-    icon: Image,
+    icon: String,
     isFirst: Boolean?
 ) {
     val shape = when (isFirst) {

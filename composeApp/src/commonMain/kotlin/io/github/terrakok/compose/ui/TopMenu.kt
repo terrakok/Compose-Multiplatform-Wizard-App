@@ -15,8 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.unit.dp
-import io.github.skeptick.libres.compose.painterResource
-import io.github.terrakok.compose.Res
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun TopMenu(modifier: Modifier = Modifier) {
@@ -31,7 +30,7 @@ fun TopMenu(modifier: Modifier = Modifier) {
                 .clip(CircleShape)
                 .clickable { }
                 .padding(8.dp),
-            painter = painterResource(Res.image.code_off),
+            painter = painterResource("code_off.xml"),
             colorFilter = ColorFilter.tint(getContentColor()),
             contentDescription = null
         )
@@ -42,7 +41,7 @@ fun TopMenu(modifier: Modifier = Modifier) {
                 .clip(CircleShape)
                 .clickable { openUrl("https://developer.android.com/jetpack/compose/documentation") }
                 .padding(8.dp),
-            painter = painterResource(Res.image.menu_book),
+            painter = painterResource("menu_book.xml"),
             colorFilter = ColorFilter.tint(getContentColor()),
             contentDescription = null
         )
@@ -53,7 +52,7 @@ fun TopMenu(modifier: Modifier = Modifier) {
                 .clip(CircleShape)
                 .clickable { openUrl("https://github.com/terrakok/Compose-Multiplatform-Wizard") }
                 .padding(8.dp),
-            painter = painterResource(Res.image.github),
+            painter = painterResource("github.xml"),
             colorFilter = ColorFilter.tint(getContentColor()),
             contentDescription = null
         )
@@ -66,7 +65,7 @@ fun TopMenu(modifier: Modifier = Modifier) {
                 .clickable { isDark = !isDark }
                 .padding(8.dp),
             painter = painterResource(
-                if (isDark) Res.image.light_mode else Res.image.dark_mode
+                if (isDark) "light_mode.xml" else "dark_mode.xml"
             ),
             colorFilter = ColorFilter.tint(getContentColor()),
             contentDescription = null
