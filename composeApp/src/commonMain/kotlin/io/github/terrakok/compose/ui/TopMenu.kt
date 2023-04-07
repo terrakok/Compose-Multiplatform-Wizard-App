@@ -33,7 +33,7 @@ fun TopMenu(modifier: Modifier = Modifier) {
                 .clickable { }
                 .padding(8.dp),
             painter = painterResource(Res.image.code_off),
-            colorFilter = ColorFilter.tint(MaterialTheme.colors.onSurface),
+            colorFilter = ColorFilter.tint(getContentColor()),
             contentDescription = null
         )
         Image(
@@ -44,7 +44,7 @@ fun TopMenu(modifier: Modifier = Modifier) {
                 .clickable { openUrl("https://developer.android.com/jetpack/compose/documentation") }
                 .padding(8.dp),
             painter = painterResource(Res.image.menu_book),
-            colorFilter = ColorFilter.tint(MaterialTheme.colors.onSurface),
+            colorFilter = ColorFilter.tint(getContentColor()),
             contentDescription = null
         )
         Image(
@@ -55,7 +55,7 @@ fun TopMenu(modifier: Modifier = Modifier) {
                 .clickable { openUrl("https://github.com/terrakok/Compose-Multiplatform-Wizard") }
                 .padding(8.dp),
             painter = painterResource(Res.image.github),
-            colorFilter = ColorFilter.tint(MaterialTheme.colors.onSurface),
+            colorFilter = ColorFilter.tint(getContentColor()),
             contentDescription = null
         )
         var isDark by CurrentThemeIsDark.current
@@ -69,7 +69,7 @@ fun TopMenu(modifier: Modifier = Modifier) {
             painter = painterResource(
                 if (isDark) Res.image.light_mode else Res.image.dark_mode
             ),
-            colorFilter = ColorFilter.tint(MaterialTheme.colors.onSurface),
+            colorFilter = ColorFilter.tint(getContentColor()),
             contentDescription = null
         )
     }

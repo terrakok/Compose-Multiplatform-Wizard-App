@@ -14,6 +14,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.Card
+import androidx.compose.material.LocalContentAlpha
+import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
@@ -75,17 +77,27 @@ fun App() = AppTheme {
                 )
                 Spacer(Modifier.size(20.dp))
 
-                val isAndroid = remember { mutableStateOf(true) }
-                val isIos = remember { mutableStateOf(true) }
-                val isDesktop = remember { mutableStateOf(true) }
-                val isBrowser = remember { mutableStateOf(true) }
-                ComposeTargetGroup(isAndroid, isIos, isDesktop, isBrowser)
+                val androidState = remember { mutableStateOf(true) }
+                val iosState = remember { mutableStateOf(true) }
+                val desktopState = remember { mutableStateOf(true) }
+                val browserState = remember { mutableStateOf(true) }
+                ComposeTargetGroup(androidState, iosState, desktopState, browserState)
                 Spacer(Modifier.size(20.dp))
 
-                Button(onClick = {}) {
+                val isAndroid by androidState
+                val isIos by iosState
+                val isDesktop by desktopState
+                val isBrowser by browserState
+
+                val isReady = (isAndroid || isIos || isDesktop || isBrowser)
+                        && projectNameState.isNotBlank() && projectIdState.isNotBlank()
+                Button(
+                    enabled = isReady,
+                    onClick = {}
+                ) {
                     Image(
                         painter = painterResource(Res.image.arrow_circle_down),
-                        colorFilter = ColorFilter.tint(MaterialTheme.colors.onPrimary),
+                        colorFilter = ColorFilter.tint(getContentColor()),
                         contentDescription = null
                     )
                     Spacer(Modifier.size(10.dp))
@@ -95,5 +107,8 @@ fun App() = AppTheme {
         }
     }
 }
+
+@Composable
+internal fun getContentColor() = LocalContentColor.current.copy(alpha = LocalContentAlpha.current)
 
 internal expect fun openUrl(url: String?)
