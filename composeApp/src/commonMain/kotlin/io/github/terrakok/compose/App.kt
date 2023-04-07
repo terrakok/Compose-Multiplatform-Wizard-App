@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.unit.dp
 import io.github.skeptick.libres.compose.painterResource
+import io.github.terrakok.compose.wizard.ProjectInfo
 
 @Composable
 fun App() = AppTheme {
@@ -53,8 +54,9 @@ fun App() = AppTheme {
                 Header()
                 Spacer(Modifier.size(20.dp))
 
-                var projectNameState by remember { mutableStateOf("Compose App") }
-                var projectIdState by remember { mutableStateOf("org.company.app") }
+                val default = ProjectInfo()
+                var projectNameState by remember { mutableStateOf(default.name) }
+                var projectIdState by remember { mutableStateOf(default.packageId) }
 
                 OutlinedTextField(
                     modifier = Modifier.requiredWidthIn(min = 480.dp),
