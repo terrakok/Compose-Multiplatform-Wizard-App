@@ -1,6 +1,5 @@
 package io.github.terrakok.compose.ui
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -13,6 +12,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.Card
+import androidx.compose.material.Icon
 import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.LocalContentColor
 import androidx.compose.material.OutlinedTextField
@@ -26,8 +26,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.unit.dp
+import compose.icons.TablerIcons
+import compose.icons.tablericons.ArrowDownCircle
 import io.github.terrakok.compose.wizard.ApolloPlugin
 import io.github.terrakok.compose.wizard.BuildConfigPlugin
 import io.github.terrakok.compose.wizard.ComposeIcons
@@ -44,7 +45,6 @@ import io.github.terrakok.compose.wizard.Napier
 import io.github.terrakok.compose.wizard.ProjectInfo
 import io.github.terrakok.compose.wizard.SQLDelightPlugin
 import io.github.terrakok.compose.wizard.Voyager
-import org.jetbrains.compose.resources.painterResource
 
 val LocalShowVersions = compositionLocalOf { mutableStateOf(false) }
 
@@ -138,9 +138,9 @@ fun App() = AppTheme {
                         enabled = isReady,
                         onClick = {}
                     ) {
-                        Image(
-                            painter = painterResource("arrow_circle_down.xml"),
-                            colorFilter = ColorFilter.tint(getContentColor()),
+                        Icon(
+                            imageVector = TablerIcons.ArrowDownCircle,
+                            tint = getContentColor(),
                             contentDescription = null
                         )
                         Spacer(Modifier.size(10.dp))

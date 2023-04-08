@@ -1,6 +1,5 @@
 package io.github.terrakok.compose.ui
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -10,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Card
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
@@ -19,10 +19,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.unit.dp
+import compose.icons.TablerIcons
+import compose.icons.tablericons.Circle
+import compose.icons.tablericons.CircleCheck
 import io.github.terrakok.compose.wizard.Dependency
-import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun DependencyCard(
@@ -51,15 +52,13 @@ fun DependencyCard(
                     text = dependency.description
                 )
             }
-            Image(
+            Icon(
                 modifier = Modifier
                     .padding(16.dp)
                     .size(24.dp)
                     .align(Alignment.TopEnd),
-                painter = painterResource(
-                    if (isSelected) "circle_checked.xml" else "circle_unchecked.xml"
-                ),
-                colorFilter = ColorFilter.tint(MaterialTheme.colors.primary),
+                imageVector = if (isSelected) TablerIcons.CircleCheck else TablerIcons.Circle,
+                tint = MaterialTheme.colors.primary,
                 contentDescription = null
             )
             TextButton(
