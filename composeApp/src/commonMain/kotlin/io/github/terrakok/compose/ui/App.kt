@@ -76,6 +76,7 @@ fun App() = AppTheme {
 
                     OutlinedTextField(
                         modifier = Modifier.width(480.dp),
+                        singleLine = true,
                         value = projectNameState,
                         onValueChange = { projectNameState = it },
                         label = { Text("Project name") }
@@ -84,6 +85,7 @@ fun App() = AppTheme {
 
                     OutlinedTextField(
                         modifier = Modifier.width(480.dp),
+                        singleLine = true,
                         value = projectIdState,
                         onValueChange = { projectIdState = it },
                         label = { Text("Project ID") }
