@@ -50,8 +50,9 @@ private fun ComposeTargetButton(
     isFirst: Boolean?
 ) {
     val shape = when (isFirst) {
-        true -> RoundedCornerShape(4.dp, 0.dp, 0.dp, 4.dp)
-        false -> RoundedCornerShape(0.dp, 4.dp, 4.dp, 0.dp)
+        //TODO: fix JS compilation
+//        true -> RoundedCornerShape(4.dp, 0.dp, 0.dp, 4.dp)
+//        false -> RoundedCornerShape(0.dp, 4.dp, 4.dp, 0.dp)
         else -> RoundedCornerShape(0.dp)
     }
 
