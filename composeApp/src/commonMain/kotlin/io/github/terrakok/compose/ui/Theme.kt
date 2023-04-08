@@ -3,13 +3,20 @@ package io.github.terrakok.compose.ui
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.Typography
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.platform.Font
+import org.jetbrains.compose.resources.resource
 
 private val LightColors = lightColors(
     primary = md_theme_light_primary,
@@ -48,8 +55,18 @@ fun AppTheme(
     ) {
         val isDark by LocalThemeIsDark.current
         val colors = if (!isDark) LightColors else DarkColors
+
+        var robotoFontFamily: FontFamily by remember { mutableStateOf(FontFamily.Default) }
+
+        LaunchedEffect(Unit) {
+            robotoFontFamily = FontFamily(
+                Font("Roboto-Regular.ttf", resource("Roboto-Regular.ttf").readBytes())
+            )
+        }
+
         MaterialTheme(
             colors = colors,
+            typography = Typography(robotoFontFamily),
             content = {
                 Surface(content = content)
             }
