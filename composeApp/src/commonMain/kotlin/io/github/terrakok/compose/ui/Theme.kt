@@ -49,17 +49,8 @@ fun AppTheme(
         val isDark by LocalThemeIsDark.current
         val colors = if (!isDark) LightColors else DarkColors
 
-//        var robotoFontFamily: FontFamily by remember { mutableStateOf(FontFamily.Default) }
-//
-//        LaunchedEffect(Unit) {
-//            robotoFontFamily = FontFamily(
-//                Font("Roboto-Regular.ttf", resource("Roboto-Regular.ttf").readBytes())
-//            )
-//        }
-
         MaterialTheme(
             colors = colors,
-//            typography = Typography(robotoFontFamily),
             content = {
                 Surface(content = content)
             }
