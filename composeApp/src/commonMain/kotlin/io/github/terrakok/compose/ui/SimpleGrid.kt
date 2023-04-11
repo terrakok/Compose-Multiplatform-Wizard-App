@@ -4,7 +4,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import kotlin.math.roundToInt
@@ -21,13 +23,15 @@ fun SimpleGrid(
         val columns = (box.maxWidth / columnWidth).roundToInt()
 
         Column(modifier = modifier) {
-            repeat(itemCount / columns) { row ->
+            repeat((itemCount / columns) + 1) { row ->
                 val delta = row * columns
-                Row {
+                Row(
+                    modifier = Modifier.align(Alignment.CenterHorizontally)
+                ) {
                     repeat(columns) { column ->
-                        Box(modifier = Modifier.weight(1f)) {
-                            val index = delta + column
-                            if (index < itemCount) {
+                        val index = delta + column
+                        if (index < itemCount) {
+                            Box(modifier = Modifier.width(box.maxWidth / columns)) {
                                 content(index)
                             }
                         }
