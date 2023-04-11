@@ -9,7 +9,6 @@
 
 ## Known issues:
 - **browser** theme switcher is broken
-- **android** compilation is broken due `Font`
 - result generator is not implemented
 
 ## Before running!
